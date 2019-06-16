@@ -14,11 +14,13 @@
     <name>warehouse</name>
     <description>Warehouse App</description>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
