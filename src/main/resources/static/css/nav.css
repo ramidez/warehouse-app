@@ -124,3 +124,10 @@
     color: #ecdbff;
     background-color: #0371b0;
 }
+body {
+    /*background-image: url("../img/leaves.png");*/
+}
+body {
+    padding-top: 70px;
+    padding-left: 15px;
+}
