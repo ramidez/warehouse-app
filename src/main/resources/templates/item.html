@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="../static/css/nav.css" rel="stylesheet" th:href="@{/css/nav.css}"/>
@@ -8,28 +8,29 @@
 </head>
 <body>
 <nav th:insert="navbar :: nav"></nav>
-<h1>Dodaj przedmiot</h1>
-<div class="container border">
-    <div class="row">
-        <div class="col">
-    <form action="#" th:action="@{/greeting}" th:object="${item}" method="post">
-        <div class="form-group row">
-            <label class=" col-form-label">Id</label>
-            <div class="col-sm-2">
-                <input type="input" class="form-control" th:field="*{name}" id="id" placeholder="Id">
-            </div>
-        </div>
-        <p>Id: <input type="text" th:field="*{name}"/></p>
-        <p>Id: <input type="text" th:field="*{purchaseDate}" /></p>
-        <p>Id: <input type="text" th:field="*{productionDate}" /></p>
-        <p>Id: <input type="text" th:field="*{description}" /></p>
-        <p>Id: <input type="text" th:field="*{type}" /></p>
-        <p>Id: <input type="text" th:field="*{team}" /></p>
-        <p>Id: <input type="text" th:field="*{warehouse}" /></p>
-        <p><input type="submit"  class="btn btn-primary" value="Submit" /></p>
+<div class="container">
+
+    <p class="h4 mb-4">Dodaj przedmiot</p>
+
+    <form action="#" th:action="@{/add-item}"
+          th:object="${item}" method="POST">
+
+        <input type="text" th:field="*{name}"
+               class="form-control mb-4 col-4" placeholder="Nazwa">
+
+        <input type="date" th:field="*{purchaseDate}"
+               class="form-control mb-4 col-4" placeholder="Data zakupu">
+
+        <input type="text" th:field="*{description}"
+               class="form-control mb-4 col-4" placeholder="Opis">
+
+        <button type="submit" class="btn btn-info col-2">Save</button>
+
     </form>
-        </div>
-    </div>
+
+    <hr>
+    <a th:href="@{/home}">Powrót do listy przedmiotów</a>
+
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

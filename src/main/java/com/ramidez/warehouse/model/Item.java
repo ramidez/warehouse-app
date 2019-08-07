@@ -1,8 +1,10 @@
 package com.ramidez.warehouse.model;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -17,11 +19,12 @@ public class Item {
     @Column(name = "name")
     private String name;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "purchaseDate")
-    private Date purchaseDate;
+    private LocalDate purchaseDate;
 
     @Column(name = "productionDate")
-    private Date productionDate;
+    private LocalDate productionDate;
 
     @Column(name = "description")
     private String description;
