@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>warehouse</name>
     <description>Warehouse App</description>
+    <packaging>war</packaging>
 
 
     <dependencies>
