@@ -5,7 +5,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @Entity
@@ -29,8 +28,9 @@ public class Item {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "type_id")
+    @Enumerated
+//    @ManyToOne
+//    @JoinColumn(name = "type_id")
     private Type type;
 
     @ManyToOne

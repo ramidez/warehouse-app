@@ -1,22 +1,20 @@
 package com.ramidez.warehouse.model;
 
-import lombok.Data;
+public enum Type {
 
-import javax.persistence.*;
-import java.util.Set;
+    NARZEDZIA("Narzędzia"), PROGRAM("Program");
 
-@Data
-@Entity
-@Table(name = "type")
-public class Type {
+    private String nazwa;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Type(String nazwa){
+        this.nazwa = nazwa;
+    }
 
-    @Column(name = "name")
-    private String name;
+    public String getNazwa() {
+        return nazwa;
+    }
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "type")
-    private Set<Item> items;
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
+    }
 }
