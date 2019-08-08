@@ -30,8 +30,9 @@
         <input type="date" th:field="*{purchaseDate}"
                class="form-control mb-4 col-4" placeholder="Data zakupu">
 
-        <input type="text" th:field="*{description}"
-               class="form-control mb-4 col-4" placeholder="Opis">
+        <div class="form-group">
+            <textarea  th:field="*{description}" class="form-control mb-4 col-4" rows="5" id="comment" placeholder="Opis"></textarea>
+        </div>
 
         <button type="submit" class="btn btn-info col-2">Save</button>
 
