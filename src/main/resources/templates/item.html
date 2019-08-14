@@ -27,6 +27,18 @@
                     th:text="${typ}">
             </option>
         </select>
+        <select class="form-control mb-4 col-4" th:field="*{magazyn}">
+            <option th:each="magazyn : ${T(com.ramidez.warehouse.model.Magazyn).values()}"
+                    th:value="${magazyn}"
+                    th:text="${magazyn.getNazwa()}">
+            </option>
+        </select>
+        <select class="form-control mb-4 col-4" th:field="*{stan}">
+            <option th:each="stan : ${T(com.ramidez.warehouse.model.StanPrzedmiotu).values()}"
+                    th:value="${stan}"
+                    th:text="${stan.getNazwa()}">
+            </option>
+        </select>
         <input type="date" th:field="*{purchaseDate}"
                class="form-control mb-4 col-4" placeholder="Data zakupu">
 

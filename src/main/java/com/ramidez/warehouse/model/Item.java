@@ -37,8 +37,11 @@ public class Item {
     @JoinColumn(name = "team_id")
     private Team team;
 
-    @ManyToOne
-    @JoinColumn(name = "warehouse_id")
-    private Warehouse warehouse;
+    @Enumerated
+//    @JoinColumn(name = "warehouse_id")
+    private Magazyn magazyn;
+
+    @Enumerated
+    private StanPrzedmiotu stan;
 
 }
